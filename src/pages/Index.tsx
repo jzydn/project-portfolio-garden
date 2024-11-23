@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 
 const projects = [
   {
@@ -28,7 +29,38 @@ const projects = [
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
-      <header className="container mx-auto px-4 py-32">
+      <nav className="fixed top-0 left-0 right-0 z-50 glass">
+        <div className="container mx-auto px-4 py-4">
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-3 p-4">
+                    {projects.map((project) => (
+                      <li key={project.id}>
+                        <NavigationMenuLink asChild>
+                          <a
+                            href={`#project-${project.id}`}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">{project.title}</div>
+                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              {project.description}
+                            </p>
+                          </a>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
+      </nav>
+
+      <header className="container mx-auto px-4 py-32 mt-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -36,13 +68,13 @@ const Index = () => {
           className="max-w-2xl mx-auto text-center"
         >
           <span className="inline-block px-3 py-1 mb-4 text-sm font-medium rounded-full glass">
-            Welcome to my portfolio
+            Jay (vsc)
           </span>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60">
-            Creating digital experiences that matter
+            BSc in Computer Science within the UK
           </h1>
           <p className="text-lg text-muted-foreground mb-8">
-            I'm a developer passionate about building beautiful and functional web applications
+            👋 Hey there, I'm Jay. I'm a developer based within the United Kingdom. I specialize within JS and CSS, HTML; and LuaU within many frameworks such as Roblox-TS.
           </p>
         </motion.div>
       </header>
@@ -55,7 +87,7 @@ const Index = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {projects.map((project, index) => (
-            <Link to={`/project/${project.id}`} key={project.id}>
+            <Link to={`/project/${project.id}`} key={project.id} id={`project-${project.id}`}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
