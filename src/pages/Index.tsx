@@ -28,8 +28,8 @@ const projects = [
     id: 3,
     title: "Vita Extra",
     description: "Implementing custom checkout systems and optimizing performance",
-    image: "/lovable-uploads/754df5a2-9f82-45e1-93f3-8c9ef5c7f0ee.png",
-    tags: ["Enterprise", "Optimization", "Systems"],
+    image: "/lovable-uploads/1e4cb9a9-f3c3-4739-bf8e-0f0889e2d763.png",
+    tags: ["LuaU"],
     path: "/project-three"
   },
 ];
@@ -174,13 +174,7 @@ const Index = () => (
     <footer className="container mx-auto px-4 py-12">
       <div className="text-center">
         <p className="text-muted-foreground">
-          Let's work together.{" "}
-          <a
-            href="mailto:your.email@example.com"
-            className="text-foreground hover:opacity-80 transition-opacity"
-          >
-            Get in touch
-          </a>
+          Made with 💖 by Jay
         </p>
       </div>
     </footer>
