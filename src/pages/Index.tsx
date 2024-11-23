@@ -9,6 +9,7 @@ const projects = [
     description: "A beautiful web application",
     image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80",
     tags: ["React", "TypeScript", "Tailwind"],
+    path: "/project-one"
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ const projects = [
     description: "Mobile-first design system",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80",
     tags: ["Design", "System", "Mobile"],
+    path: "/project-two"
   },
   {
     id: 3,
@@ -23,6 +25,7 @@ const projects = [
     description: "Enterprise software solution",
     image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=800&q=80",
     tags: ["Enterprise", "Software", "Cloud"],
+    path: "/project-three"
   },
 ];
 
@@ -30,9 +33,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
       <nav className="fixed top-0 left-0 right-0 z-50 glass">
-        <div className="container mx-auto px-4 py-4">
+        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+          <span className="text-xl font-bold">Jay (vsc)</span>
           <NavigationMenu>
-            <NavigationMenuList>
+            <NavigationMenuList className="flex justify-end">
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -40,15 +44,15 @@ const Index = () => {
                     {projects.map((project) => (
                       <li key={project.id}>
                         <NavigationMenuLink asChild>
-                          <a
-                            href={`#project-${project.id}`}
+                          <Link
+                            to={project.path}
                             className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                           >
                             <div className="text-sm font-medium leading-none">{project.title}</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               {project.description}
                             </p>
-                          </a>
+                          </Link>
                         </NavigationMenuLink>
                       </li>
                     ))}
@@ -87,7 +91,7 @@ const Index = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {projects.map((project, index) => (
-            <Link to={`/project/${project.id}`} key={project.id} id={`project-${project.id}`}>
+            <Link to={project.path} key={project.id}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
