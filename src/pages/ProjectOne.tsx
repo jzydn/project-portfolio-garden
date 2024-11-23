@@ -23,26 +23,17 @@ const ProjectOne = () => {
         </div>
         <div className="prose prose-invert max-w-none">
           <p className="text-lg text-muted-foreground mb-4">
-            A ROBLOX game developed in 2021 featuring custom-scripted systems implemented in LuaU. As the assigned developer,
-            I was responsible for creating and implementing all game mechanics and systems.
+            JUMP Trampolining was a game on ROBLOX which was very successful at the time it was active, it was a very unique project which I have now parted from.
           </p>
           <div className="flex flex-wrap gap-2 mb-8">
             <span className="px-3 py-1 text-sm rounded-full glass">LuaU</span>
             <span className="px-3 py-1 text-sm rounded-full glass">ROBLOX</span>
             <span className="px-3 py-1 text-sm rounded-full glass">Game Development</span>
           </div>
-          <h2 className="text-2xl font-bold mt-8 mb-4">Project Overview</h2>
-          <p className="mb-4">
-            JUMP Trampolining was a unique ROBLOX experience that required extensive custom system development. 
-            The project involved implementing physics-based trampolining mechanics, player progression systems, 
-            and multiplayer functionality.
-          </p>
           <h2 className="text-2xl font-bold mt-8 mb-4">Key Features</h2>
-          <ul className="list-disc pl-6 mb-8">
-            <li className="mb-2">Custom physics-based trampolining system</li>
-            <li className="mb-2">Player progression and achievement tracking</li>
-            <li className="mb-2">Multiplayer synchronization</li>
-            <li className="mb-2">Performance optimization for large player counts</li>
+          <ul className="list-disc pl-6 mb-8 space-y-2">
+            <li>I got tasked with creating custom systems, and stress testing them to make sure they are optimized for the public.</li>
+            <li>I got tasked with performance optimization within Part Count or other.</li>
           </ul>
         </div>
       </motion.div>
