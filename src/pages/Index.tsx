@@ -2,14 +2,15 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { Code, Server, Database, Terminal } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 const projects = [
   {
     id: 1,
-    title: "Project One",
-    description: "A beautiful web application",
+    title: "JUMP Trampolining",
+    description: "ROBLOX game with custom scripted systems in LuaU",
     image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80",
-    tags: ["React", "TypeScript", "Tailwind"],
+    tags: ["LuaU", "ROBLOX", "Game Development"],
     path: "/project-one"
   },
   {
@@ -41,23 +42,20 @@ const Index = () => {
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4">
+                  <div className="w-[400px] p-4">
                     {projects.map((project) => (
-                      <li key={project.id}>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            to={project.path}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium leading-none">{project.title}</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              {project.description}
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
+                      <Link
+                        key={project.id}
+                        to={project.path}
+                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                      >
+                        <div className="text-sm font-medium leading-none">{project.title}</div>
+                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                          {project.description}
+                        </p>
+                      </Link>
                     ))}
-                  </ul>
+                  </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
             </NavigationMenuList>
@@ -82,11 +80,38 @@ const Index = () => {
             👋 Hey there, I'm Jay. I'm a Software Engineer based within the United Kingdom. I specialize within JS and CSS, HTML. LuaU within many frameworks such as Roblox-TS.
           </p>
           <div className="flex justify-center gap-6 mb-12">
-            <Code className="w-8 h-8" title="HTML/CSS" />
-            <Terminal className="w-8 h-8" title="Lua" />
-            <Server className="w-8 h-8" title="Node.js" />
-            <Database className="w-8 h-8" title="Docker" />
-            <Terminal className="w-8 h-8" title="Linux" />
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Code className="w-8 h-8" />
+                </TooltipTrigger>
+                <TooltipContent>HTML/CSS</TooltipContent>
+              </Tooltip>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Terminal className="w-8 h-8" />
+                </TooltipTrigger>
+                <TooltipContent>Lua</TooltipContent>
+              </Tooltip>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Server className="w-8 h-8" />
+                </TooltipTrigger>
+                <TooltipContent>Node.js</TooltipContent>
+              </Tooltip>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Database className="w-8 h-8" />
+                </TooltipTrigger>
+                <TooltipContent>Docker</TooltipContent>
+              </Tooltip>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Terminal className="w-8 h-8" />
+                </TooltipTrigger>
+                <TooltipContent>Linux</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </div>
         </motion.div>
       </header>
