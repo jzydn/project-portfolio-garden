@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 import { Code, Server, Database, Terminal } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Button } from "@/components/ui/button"; 
+import { useState } from "react"; 
+import { LoginModal } from "@/components/LoginModal";
 
 const projects = [
   {
@@ -31,36 +34,50 @@ const projects = [
   },
 ];
 
-const Navigation = () => (
-  <nav className="fixed top-0 left-0 right-0 z-50 glass">
-    <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-      <span className="text-xl font-bold">Jay (vsc)</span>
-      <NavigationMenu>
-        <NavigationMenuList className="flex justify-end">
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <div className="w-[400px] p-4">
-                {projects.map((project) => (
-                  <Link
-                    key={project.id}
-                    to={project.path}
-                    className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                  >
-                    <div className="text-sm font-medium leading-none">{project.title}</div>
-                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                      {project.description}
-                    </p>
-                  </Link>
-                ))}
-              </div>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-    </div>
-  </nav>
-);
+const Navigation = () => {
+  const [showLoginModal, setShowLoginModal] = useState(false); 
+
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 glass">
+      <div className="container mx-auto px-4 py-4 flex items-center">
+        <div className="flex-1 flex items-center gap-8">
+          <span className="text-xl font-bold">Jay (vsc)</span>
+          <NavigationMenu>
+            <NavigationMenuList className="flex justify-start">
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="w-[400px] p-4">
+                    {projects.map((project) => (
+                      <Link
+                        key={project.id}
+                        to={project.path}
+                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                      >
+                        <div className="text-sm font-medium leading-none">{project.title}</div>
+                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                          {project.description}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
+        <Button 
+          variant="ghost" 
+          className="ml-auto hover:bg-accent"
+          onClick={() => setShowLoginModal(true)}
+        >
+          Login
+        </Button>
+      </div>
+      <LoginModal open={showLoginModal} onClose={() => setShowLoginModal(false)} />
+    </nav>
+  );
+};
 
 const Index = () => (
   <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
