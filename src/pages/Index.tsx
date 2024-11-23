@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
+import { Code, Server, Database, Terminal } from "lucide-react";
 
 const projects = [
   {
@@ -78,8 +79,15 @@ const Index = () => {
             BSc in Computer Science within the UK
           </h1>
           <p className="text-lg text-muted-foreground mb-8">
-            👋 Hey there, I'm Jay. I'm a developer based within the United Kingdom. I specialize within JS and CSS, HTML; and LuaU within many frameworks such as Roblox-TS.
+            👋 Hey there, I'm Jay. I'm a Software Engineer based within the United Kingdom. I specialize within JS and CSS, HTML. LuaU within many frameworks such as Roblox-TS.
           </p>
+          <div className="flex justify-center gap-6 mb-12">
+            <Code className="w-8 h-8" title="HTML/CSS" />
+            <Terminal className="w-8 h-8" title="Lua" />
+            <Server className="w-8 h-8" title="Node.js" />
+            <Database className="w-8 h-8" title="Docker" />
+            <Terminal className="w-8 h-8" title="Linux" />
+          </div>
         </motion.div>
       </header>
 
