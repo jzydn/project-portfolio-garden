@@ -9,8 +9,8 @@ const projects = [
     id: 1,
     title: "JUMP Trampolining",
     description: "ROBLOX game with custom scripted systems in LuaU",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80",
-    tags: ["LuaU", "ROBLOX", "Game Development"],
+    image: "/lovable-uploads/5f304e1f-0948-47e2-a89e-eceffe65b4ad.png",
+    tags: ["LuaU"],
     path: "/project-one"
   },
   {
@@ -31,38 +31,40 @@ const projects = [
   },
 ];
 
-const Index = () => {
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
-      <nav className="fixed top-0 left-0 right-0 z-50 glass">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <span className="text-xl font-bold">Jay (vsc)</span>
-          <NavigationMenu>
-            <NavigationMenuList className="flex justify-end">
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="w-[400px] p-4">
-                    {projects.map((project) => (
-                      <Link
-                        key={project.id}
-                        to={project.path}
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                      >
-                        <div className="text-sm font-medium leading-none">{project.title}</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          {project.description}
-                        </p>
-                      </Link>
-                    ))}
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
-      </nav>
+const Navigation = () => (
+  <nav className="fixed top-0 left-0 right-0 z-50 glass">
+    <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <span className="text-xl font-bold">Jay (vsc)</span>
+      <NavigationMenu>
+        <NavigationMenuList className="flex justify-end">
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <div className="w-[400px] p-4">
+                {projects.map((project) => (
+                  <Link
+                    key={project.id}
+                    to={project.path}
+                    className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                  >
+                    <div className="text-sm font-medium leading-none">{project.title}</div>
+                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                      {project.description}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+        </NavigationMenuList>
+      </NavigationMenu>
+    </div>
+  </nav>
+);
 
+const Index = () => (
+  <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
+    <Navigation />
       <header className="container mx-auto px-4 py-32 mt-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -115,8 +117,7 @@ const Index = () => {
           </div>
         </motion.div>
       </header>
-
-      <main className="container mx-auto px-4 py-12">
+    <main className="container mx-auto px-4 py-12 mt-24">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -156,8 +157,7 @@ const Index = () => {
             </Link>
           ))}
         </motion.div>
-      </main>
-
+    </main>
       <footer className="container mx-auto px-4 py-12">
         <div className="text-center">
           <p className="text-muted-foreground">
@@ -171,8 +171,7 @@ const Index = () => {
           </p>
         </div>
       </footer>
-    </div>
-  );
-};
+  </div>
+);
 
 export default Index;
