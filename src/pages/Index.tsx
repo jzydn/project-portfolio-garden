@@ -6,29 +6,29 @@ const projects = [
     id: 1,
     title: "Project One",
     description: "A beautiful web application",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80",
     tags: ["React", "TypeScript", "Tailwind"],
   },
   {
     id: 2,
     title: "Project Two",
     description: "Mobile-first design system",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80",
     tags: ["Design", "System", "Mobile"],
   },
   {
     id: 3,
     title: "Project Three",
     description: "Enterprise software solution",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=800&q=80",
     tags: ["Enterprise", "Software", "Cloud"],
   },
 ];
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <header className="container mx-auto px-4 py-20">
+    <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
+      <header className="container mx-auto px-4 py-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ const Index = () => {
           <span className="inline-block px-3 py-1 mb-4 text-sm font-medium rounded-full glass">
             Welcome to my portfolio
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60">
             Creating digital experiences that matter
           </h1>
           <p className="text-lg text-muted-foreground mb-8">
@@ -66,7 +66,7 @@ const Index = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="rounded-xl"
+                    className="rounded-xl opacity-80 group-hover:opacity-100 transition-opacity"
                   />
                 </div>
                 <div className="p-4">
