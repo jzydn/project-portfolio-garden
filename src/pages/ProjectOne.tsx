@@ -66,7 +66,7 @@ const ProjectOne = () => {
           <h1 className="text-4xl font-bold mb-6">JUMP Trampolining</h1>
           <div className="aspect-video mb-8 rounded-xl overflow-hidden">
             <img
-              src="/lovable-uploads/5f304e1f-0948-47e2-a89e-eceffe65b4ad.png"
+              src="/lovable-uploads/acc10d5f-b384-4238-ba23-a542938e5c5c.png"
               alt="JUMP Trampolining"
               className="w-full h-full object-cover"
             />

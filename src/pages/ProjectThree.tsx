@@ -66,7 +66,7 @@ const ProjectThree = () => {
           <h1 className="text-4xl font-bold mb-6">Vita Extra</h1>
           <div className="aspect-video mb-8 rounded-xl overflow-hidden">
             <img
-              src="/lovable-uploads/754df5a2-9f82-45e1-93f3-8c9ef5c7f0ee.png"
+              src="/lovable-uploads/1e4cb9a9-f3c3-4739-bf8e-0f0889e2d763.png"
               alt="Vita Extra Project"
               className="w-full h-full object-cover"
               loading="lazy"
