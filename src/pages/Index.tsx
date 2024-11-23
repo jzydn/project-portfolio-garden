@@ -9,16 +9,16 @@ const projects = [
     id: 1,
     title: "JUMP Trampolining",
     description: "ROBLOX game with custom scripted systems in LuaU",
-    image: "/lovable-uploads/5f304e1f-0948-47e2-a89e-eceffe65b4ad.png",
+    image: "/lovable-uploads/acc10d5f-b384-4238-ba23-a542938e5c5c.png",
     tags: ["LuaU"],
     path: "/project-one"
   },
   {
     id: 2,
-    title: "Project Two",
-    description: "Mobile-first design system",
+    title: "Berkeley County",
+    description: "Custom systems and optimizations for Berkeley County",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80",
-    tags: ["Design", "System", "Mobile"],
+    tags: ["LuaU", "Optimization"],
     path: "/project-two"
   },
   {
@@ -121,6 +121,7 @@ const Index = () => (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
