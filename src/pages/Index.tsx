@@ -13,7 +13,7 @@ const projects = [
     title: "JUMP Trampolining",
     description: "I worked within the Backend of JUMP Trampolining",
     image: "/lovable-uploads/acc10d5f-b384-4238-ba23-a542938e5c5c.png",
-    tags: ["LuaU"],
+    tags: ["LuaU", "UI/UX Design"],
     path: "/project-one"
   },
   {
@@ -21,7 +21,7 @@ const projects = [
     title: "Berkeley County",
     description: "I worked within the backend and did UI via Figma and Adobe",
     image: "/lovable-uploads/754df5a2-9f82-45e1-93f3-8c9ef5c7f0ee.png",
-    tags: ["LuaU", "Optimization"],
+    tags: ["LuaU", "Optimization", "UI/UX Design"],
     path: "/project-two"
   },
   {
@@ -29,7 +29,7 @@ const projects = [
     title: "Vita Extra",
     description: "Implementing custom checkout systems and optimizing performance",
     image: "/lovable-uploads/1e4cb9a9-f3c3-4739-bf8e-0f0889e2d763.png",
-    tags: ["LuaU"],
+    tags: ["LuaU", "UI/UX Design"],
     path: "/project-three"
   },
 ];
@@ -96,7 +96,7 @@ const Index = () => (
           BSc in Computer Science within the UK
         </h1>
         <p className="text-lg text-muted-foreground mb-8">
-          👋 Hey there, I'm Jay. I'm a Software Engineer based within the United Kingdom. I specialize within JS and CSS, HTML. LuaU within many frameworks such as Roblox-TS.
+          👋 Hey there, I'm Jay. I'm a Software Engineer based within the United Kingdom. I specialize within JS and CSS, HTML. UI/UIX Design using Figma and Adobe products. I also know LuaU and work within many frameworks such as Roblox-TS.
         </p>
         <div className="flex justify-center gap-6 mb-12">
           <TooltipProvider>
